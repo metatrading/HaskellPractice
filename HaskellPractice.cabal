@@ -1,0 +1,83 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e6ea3cb6400af5c96f3f223f876b90ff5cbc7920b5823b586ca9adf3550b823b
+
+name:           HaskellPractice
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/HaskellPractice#readme>
+homepage:       https://github.com/githubuser/HaskellPractice#readme
+bug-reports:    https://github.com/githubuser/HaskellPractice/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/HaskellPractice
+
+library
+  exposed-modules:
+      File.FileModule
+      Lib
+      Samplemodule
+  other-modules:
+      Paths_HaskellPractice
+  hs-source-dirs:
+      src
+  build-depends:
+      HsYAML
+    , base
+    , bytestring
+    , random
+    , text
+    , utf8-string
+  default-language: Haskell2010
+
+executable HaskellPractice-exe
+  main-is: Main.hs
+  other-modules:
+      File.FileModule
+      Lib
+      Samplemodule
+      Paths_HaskellPractice
+  hs-source-dirs:
+      app
+      src
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HaskellPractice
+    , HsYAML
+    , base
+    , bytestring
+    , random
+    , text
+    , utf8-string
+  default-language: Haskell2010
+
+test-suite HaskellPractice-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_HaskellPractice
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HaskellPractice
+    , HsYAML
+    , base
+    , bytestring
+    , random
+    , text
+    , utf8-string
+  default-language: Haskell2010
